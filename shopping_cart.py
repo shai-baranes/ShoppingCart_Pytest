@@ -1,5 +1,5 @@
 # source: https://www.youtube.com/watch?v=YbpKMIUjvK8   (pixegami)
-
+from item_database import ItemDatabase
 
 items_price_dict = {
 	"Apple": 5,
@@ -49,10 +49,10 @@ class ShoppingCart:
 		return self.items
 
 	# @property
-	def get_total_price(self, items_price_dict):
+	def get_total_price(self, ItemDatabase):
 		total_price = 0
 		for item in self.items:
-			total_price += items_price_dict.get(item) # reason to prefer: 
+			total_price += ItemDatabase.get(item) # reason to prefer: 
 			# total_price += items_price_dict[item] # same as above
 		return total_price
 
