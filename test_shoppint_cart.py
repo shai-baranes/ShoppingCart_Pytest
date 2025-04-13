@@ -17,11 +17,21 @@ def dual_items_cart():
 
 
 
+class TestCanAddItem: # also can be removed from class (while removing the "self")
+	@pytest.mark.parametrize("max_items, item", [
+	    (5, "Apple"),
+	    (1, "Banana"),
+	    (3, "Orange"),
+		])
+	def test_can_add_item(self, max_items, item):
+		my_cart = ShoppingCart(5)
+		my_cart.add(item)
+		assert my_cart.size() == 1
 
-def test_can_add_item():
-	my_cart = ShoppingCart(5)
-	my_cart.add("Apple")
-	assert my_cart.size() == 1
+# def test_can_add_item():
+# 	my_cart = ShoppingCart(5)
+# 	my_cart.add("Apple")
+# 	assert my_cart.size() == 1
  
 
 def test_my_item_was_added(single_item_cart):
@@ -30,7 +40,7 @@ def test_my_item_was_added(single_item_cart):
 	assert "Banana" in single_item_cart.get_items()
 
 
-def test_total_price_calculation_1(dual_items_cart):
+def test_total_price_calculation_mock1(dual_items_cart):
 	# my_cart = ShoppingCart(2)
 	dual_items_cart.add("Banana")
 	dual_items_cart.add("Apple")
@@ -39,7 +49,7 @@ def test_total_price_calculation_1(dual_items_cart):
 	assert dual_items_cart.get_total_price(item_database) == 2
 
 
-def test_total_price_calculation_2(dual_items_cart):
+def test_total_price_calculation_mock2(dual_items_cart):
 	# my_cart = ShoppingCart(2)
 	dual_items_cart.add("Banana")
 	dual_items_cart.add("Apple")
