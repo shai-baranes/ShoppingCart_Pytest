@@ -10,23 +10,25 @@
 > for understanding what coverage of the code lines a specific test suite file went through.
 > See example report when runnig: **"pytest --cov"**: *(can also go w/ the full known report: pytest --cov -v)*
 
-> 	Name                               Stmts   Miss  Cover
-> 	------------------------------------------------------
-> 	item_database.py                       5      1    80%
-> 	shopping_cart.py                      28      0   100%
-> 	test_shopping_cart_perplexity.py      38      3    92%
-> 	test_shoppint_cart.py                 58      0   100%
-> 	------------------------------------------------------
-> 	TOTAL                                129      4    97%
+> Name                               Stmts   Miss  Cover
+> ------------------------------------------------------
+> item_database.py                       5      1    80%
+> shopping_cart.py                      28      0   100%
+> test_shopping_cart_perplexity.py      38      3    92%
+> test_shoppint_cart.py                 58      0   100%
+> ------------------------------------------------------
+> TOTAL                                129      4    97%
 
 ## Addition optional args:
 
-> - > **pytest --cov=test_shopping_cart_perplexity**   (for running a single test file)
-> - > **pytest --cov=test_shopping_cart_perplexity** --cov=test_shoppint_cart (running multiple files)
+> - **pytest --cov=test_shopping_cart_perplexity**   (for running a single test file)
+> - **pytest --cov=test_shopping_cart_perplexity** --cov=test_shoppint_cart (running multiple files)
 
-> - > **pytest --cov=. --cov-report=term-missing**   (issue report on all files w/ the missing lines - see below example)
-> - > **pytest --cov=shopping_cart --cov-report=term-missing**   (issue report on a file of interest w/ the missing lines - see the following example)
+> - **pytest --cov=. --cov-report=term-missing**   (issue report on all files w/ the missing lines - see below example)
+> - **pytest --cov=shopping_cart --cov-report=term-missing**   (issue report on a file of interest w/ the missing lines - see the following example)
 
+
+## Examplple report *(looks better in the IDE)*:
 
 >	Name                               Stmts   Miss  Cover   Missing  
 >	----------------------------------------------------------------  
