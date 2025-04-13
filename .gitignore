@@ -1,3 +1,4 @@
 env_basic_pytest
 stam.py
 __pycache__
+.coverage
